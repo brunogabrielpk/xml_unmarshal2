@@ -6,7 +6,7 @@ use serde_xml_rs::from_str;
 use std::fs::File;
 use std::io::Read;
 
-// there is  file named wkflow.xml to be reade and stored in rust structs
+// there is  file named wkflow.xml to be read and stored in the rust structs below
 
 #[derive(Debug, Deserialize, Serialize)]
 struct Meta {
@@ -93,12 +93,12 @@ struct Action {
 struct Workflow {
     // #[serde(rename = "step")]
     // steps: Vec<Step>,
-    #[serde(rename = "global-actions")]
-    global_actions: Vec<Action>,
+    //#[serde(rename = "global-actions")]
+    // global_actions: Vec<Action>,
     // #[serde(rename = "common-actions")]
     // common_actions: Vec<Action>,
-    // #[serde(rename = "initial-actions")]
-    // initial_actions: Vec<Action>,
+    #[serde(rename = "initial-actions")]
+    initial_actions: Vec<Action>,
     #[serde(rename = "meta")]
     meta: Vec<Meta>,
 }
